@@ -3,6 +3,13 @@ import pandas as pd
 import plotly.express as px
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install("snowflake-connector-python")
 
 
 # Snowflake connection function
